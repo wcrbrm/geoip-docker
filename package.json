@@ -8,7 +8,8 @@
     "login": "docker login docker.enormous.cloud",
     "pull": "docker pull docker.enormous.cloud/nginx/geoip",
     "push": "docker push docker.enormous.cloud/nginx/geoip",
-    "install": "docker run -v GeoIP:/GeoIP -it -t docker.enormous.cloud/nginx/geoip cp -rf /usr/share/GeoIP /"
+    "save": "docker run -v GeoIP:/GeoIP -it -t docker.enormous.cloud/nginx/geoip cp -rf /usr/share/GeoIP /",
+    "install": "rm -rf /etc/nginx/geoip && npm run build && npm run save && cp -rf /var/lib/docker/volumes/GeoIP/_data /etc/nginx/geoip"
   },
   "repository": {
     "type": "git",
