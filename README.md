@@ -37,3 +37,11 @@ proxy_set_header X-GEOIP_LATITUDE $geoip_latitude;
 proxy_set_header X-GEOIP_LONGITUDE $geoip_longitude;
 proxy_set_header X-GEOIP_POSTAL_CODE $geoip_postal_code;
 ```
+
+Example of adding country code to logs:
+```
+log_format  main  '$remote_addr ($geoip_country_code) - $remote_user [$time_local] [[$request_time]] "$request" '
+   '$status $body_bytes_sent "$http_referer" '
+   '"$http_user_agent" "$http_x_forwarded_for"';
+```
+
