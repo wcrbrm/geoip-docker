@@ -1,0 +1,24 @@
+{
+  "name": "geoip-docker",
+  "version": "1.0.0",
+  "description": "NGINX Geoip - setup via docker",
+  "main": "index.js",
+  "scripts": {
+    "build": "docker build -t docker.enormous.cloud/nginx/geoip .",
+    "login": "docker login docker.enormous.cloud",
+    "pull": "docker pull docker.enormous.cloud/nginx/geoip",
+    "push": "docker push docker.enormous.cloud/nginx/geoip",
+    "install": "docker run -v GeoIP:/GeoIP -it -t docker.enormous.cloud/nginx/geoip cp -rf /usr/share/GeoIP /"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wcrbrm/geoip-docker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wcrbrm/geoip-docker/issues"
+  },
+  "homepage": "https://github.com/wcrbrm/geoip-docker#readme"
+}
